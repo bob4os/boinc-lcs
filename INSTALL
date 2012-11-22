@@ -1,0 +1,93 @@
+Howto setup BOINC LCS
+-------------------------------------------------------------------------------------------------------------------
+
+BOINC LCS can fetch the current workunit state (and other host information) from BOINC clients within your network
+(or over the Internet) and displays it as an html page in your browser.
+
+Requirements:
+
+- A webserver with PHP 5 (Apache, Microsoft IIS, lighttpd...)
+- PHP simplexml (Try <?php phpinfo(); ?> to display your PHP configuration, possibilities and modules)
+- At least one BOINC client
+
+-------------------------------------------------------------------------------------------------------------------
+
+Installation steps:
+
+1. Change to the php subdirectory.
+
+2. Edit the file config.php with a texteditor and setup your clients as needed.
+   The following examples are valid (absolute path, relative path or url)
+
+   (Local resources under Unix/Linux)
+   /path/to/BOINC/client_state.xml
+   ../../BOINC/client_state.xml
+
+   (Local resources under Windows)
+   C:\Windows\Program Files\BOINC\client_state.xml
+
+   (External resources)
+   http://192.168.0.1/boinc/client_state.xml
+
+   (External resources with miniserv.pl)
+   http://192.168.0.1:8080/
+
+   You do not have to add /boinc/client_state.xml to your url because the miniserv.pl delivers this
+   file by default.
+
+3. Save the file
+
+4. Upload or copy all files to your webroot directory (or subdirectory of your choice) e.g.
+   /srv/www/htdocs/boinclcs (or /opt/lampp/htdocs/boinclcs if you are using XAMPP) where boinclcs is the name of
+   your subdirectory.
+
+5. You can skip this step if you already have a webserver installed on your client machine/s or you do not have
+   more than one computer.
+
+   !!! Important !!!
+   Since version 3.0 final, BOINC LCS has its own small webserver (miniserv.pl) written in Perl.
+   Please take a look at INSTALL-MINISERV for more information on howto setup and run this script.
+   If you prefer to install this script you can simply skip step 5 and 6 ;)
+
+   First of all you have to install a webserver on the desired client to receive data. This has to be a simple
+   webserver only. You do not have to install PHP on your clients, because its only challenge is to transmit
+   the client_state.xml file over the network. Here are some examples of widely used webserver software for
+   your operating system.
+
+   Linux -> Apache, lighttpd, Tux, and many more...
+   (Ask your package manager! There are many alternatives out there. Almost every webserver should be able
+   to serve a simple xml file)
+
+   On Windows XP Professional the Microsoft webserver IIS can also be used to do this. If you don´t want to use
+   it, because your personal attitude says "I dont like it leave me alone!", you may find alternatives!
+   Apache, lighttpd and many more are also freely available for your Windows machine...
+
+6. After installing a webserver on the client, you have to make the client_state.xml available over the network.
+   At least all webservers allow you to setup an alias or virtual host that points to your BOINC directory.
+   Please make sure you have spent enough time on security if you plan to make your clients available over
+   the internet!
+
+7. Now you should be able to open the BOINC LCS stats page in your browser.
+
+   Try to open http://hostname/boinclcs/ where boinclcs is the name of your subdirectory. (See step 3)
+
+   If you have problems, wishes or something else related to this script, please visit:
+     http://www.conmunix.net/offene-projekte/boinc-lcs/
+
+   Theres also a FAQ available (Its mainly written in german language but you can also post in english)
+     http://faq.conmunix.net
+
+   or send electronic mail to:
+     conmunix[at]onlinehome[dot]de Subject BOINC LCS
+
+
+   THANKS TO: (These guys helped me making BOINC LCS better)
+
+   - Mark Honeychurch http://mark.honeychurch.org
+   - Jan Papenbrock http://www.solvium.de/blog/
+   - Idilio Monciváis
+   - Harrison Neal
+
+   PS: Don´t hate me! English is not my native language ;)
+
+-------------------------------------------------------------------------------------------------------------------

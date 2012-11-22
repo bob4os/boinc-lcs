@@ -1,0 +1,41 @@
+Howto setup the miniserv.pl Perl script
+-------------------------------------------------------------------------------------------------------------------
+
+miniserv.pl starts a tcp socketserver on your client machine. You do not have to setup a big webserver if you want
+to transmit your client_state.xml over the network. In order to use this miniserver you have to install Perl and
+the HTTP::Daemon class on the machine where the script should run.
+
+!!! Windows users !!!
+You need to install Perl for Windows which is freely available at:
+Download: http://www.activestate.com/ActivePerl/download.html
+Documentation: http://aspn.activestate.com/ASPN/Reference/
+
+-------------------------------------------------------------------------------------------------------------------
+
+Installation steps:
+
+1. Edit the file miniserv.pl with a texteditor and setup the path that points to your client_state.xml file.
+   The following examples are valid (should be an absolute path)
+
+   (Unix/Linux)
+   /path/to/BOINC/client_state.xml
+
+   (Windows)
+   C:\Windows\Program Files\BOINC\client_state.xml
+
+   You do not have to change the port unless its used by another program.
+
+2. Save the file.
+
+3. Copy the file to a location of your choice on the client machine.
+   (UNIX/Linux -> Make the file executable chmod +x miniserv.pl)
+
+4. Open your shell konsole and start the script.
+   (UNIX/Linux -> Please do not start the miniserv.pl as superuser root as there is no need to do this!)
+
+   If you want to run it as a daemon you can use nohup under UNIX/Linux which allows you to close the terminal
+   after starting the script. It still runs in the background!
+
+   nohup /path/to/miniserv.pl
+
+-------------------------------------------------------------------------------------------------------------------

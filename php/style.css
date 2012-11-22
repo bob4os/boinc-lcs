@@ -1,0 +1,166 @@
+body {
+	background: #FFF;
+	font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
+	color: #111;
+	background: #FFF;
+}
+
+body, td {
+	font-size: 12px;
+}
+
+table {
+	float: left;
+	margin: 0 9px 20px 0;
+	border: none;
+	border-top: 5px solid #666666;
+}
+
+th {
+	font-size: 120%;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 3px;
+	color: #202020;
+}
+
+td {
+	padding: 1px 3px 0px 3px;
+}
+
+tr.subsection, tr.subsection:hover {
+	background: #E4E4E4;
+}
+
+tr.noh, tr.noh:hover {
+	background: none;
+}
+
+td.projectdivider {
+	border-bottom: 2px solid #aeaeae;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #7369CA;
+	font-weight: lighter;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+}
+
+.fakelink {
+	cursor: pointer;
+}
+
+a.bright:link, a.bright:visited, a.bright:hover, a.bright:active {
+	color: #FFF;
+	font-weight: normal;
+	text-decoration: none;
+	border: none;
+}
+
+div.fractioncontainer {
+	background: url(img/fraction_todo.jpg) repeat-x;
+	width: 100%;
+	height: 20px;
+}
+
+div.fractiondone {
+	background: url(img/fraction_done.jpg) repeat-x;
+	height: 20px;
+}
+
+div.error {
+	clear: left;
+	width: 490px;
+	padding: 3px;
+	background: #FF603C url(img/bg_error.jpg) repeat-y;
+	color: #FFF;
+}
+
+div#header {
+	font-size: 160%;
+	background: #202020;
+}
+
+div#time {
+	font-size: 110%;
+	margin-bottom: 15px;
+	background: #5A5A5A;
+}
+
+div#footer {
+	clear: left;
+	background: #5A5A5A;
+	margin-bottom: 8px;
+}
+
+div#header, div#time, div#footer {
+	font-weight: lighter;
+	width: 100%;
+	padding: 2px;
+	color: #FFF;
+}
+
+img.icon {
+	margin-right: 6px;
+	margin-left: 2px;
+}
+
+td.projects {
+	text-align: center;
+	background: #E4E4E4;
+}
+
+div.table {
+	text-align: left;
+	display: table;
+	border-collapse: collapse;
+	margin: 0;
+}
+
+div.tr {
+	text-align: left;
+	display: table-row;
+	width: 100%;
+}
+
+div.td {
+	display: table-cell;
+	width: 148px;
+	border: none;
+	padding: 2px;
+	border-bottom: 1px dotted #AEAEAE;
+	background: #FFF;
+}
+
+div.tdr {
+	display: table-cell;
+	width: 308px;
+	border: none;
+	padding: 2px;
+	border-bottom: 1px dotted #AEAEAE;
+	background: #FFF;
+}
+
+div.tdh {
+	display: table-cell;
+	width: 148px;
+	border: none;
+	padding: 2px;
+	background: #E4E4E4;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+div.tdhr {
+	display: table-cell;
+	width: 308px;
+	border: none;
+	padding: 2px;
+	background: #E4E4E4;
+	font-size: 110%;
+	font-weight: bold;
+}
