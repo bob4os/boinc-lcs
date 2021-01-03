@@ -51,6 +51,9 @@
 	            $durations[$period] = floor($seconds / $seconds_in_period);
 	            $seconds -= $durations[$period] * $seconds_in_period;
 	        }
+	        else {
+	            $durations[$period] = 0;
+	        }
 	    }
 
 	    return $durations;
@@ -133,7 +136,7 @@
   </tr>
   <tr>
     <td class="projectdivider">Computing time</td>
-    <td class="projectdivider"><?php $time = secondstodate(number_format((double)$task->current_cpu_time,0,'','')); echo $time["hours"]<1 ? '0 Hours ' : $time["hours"].' Hours ' ; echo $time["minutes"]<1 ? '0 Minutes ' : $time["minutes"].' Minutes ' ; echo $time["seconds"]<1 ? '0 Seconds' : $time["seconds"].' Seconds' ; ?></td>
+    <td class="projectdivider"><?php $time = secondstodate(number_format((double)$task->current_cpu_time, 0, '', '')); echo ($time["hours"] < 1 ? '0 Hours ' : $time["hours"] . ' Hours ') . ($time["minutes"] < 1 ? '0 Minutes ' : $time["minutes"] . ' Minutes ') . ($time["seconds"] < 1 ? '0 Seconds' : $time["seconds"] . ' Seconds'); ?></td>
   </tr>
 <?php
 					}
@@ -228,7 +231,7 @@
         </div>
         <div class="tr">
           <div class="td">Team</div>
-          <div class="tdr"><?php echo ereg(".",$project->team_name) ? $project->team_name : 'No team found' ; ?></div>
+          <div class="tdr"><?php echo preg_match("/./", $project->team_name) ? $project->team_name : 'No team found' ; ?></div>
         </div>
         <div class="tr">
           <div class="td">Host ID</div>
